@@ -5,21 +5,21 @@
 class GoRotateBackups < Formula
   desc ""
   homepage "https://stenic.io"
-  version "1.1.1"
+  version "1.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.1/go-rotate-backups_darwin_arm64.tar.gz"
-      sha256 "f4c262b2b9a40e2f63709e899d2284ebe62f59217af04c482ea1045757174f62"
+      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.2/go-rotate-backups_darwin_arm64.tar.gz"
+      sha256 "f90a35b679cab8501f5c4dc059fff7da2edd7732ced9099a5418b40618f3ba40"
 
       def install
         bin.install "go-rotate-backups"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.1/go-rotate-backups_darwin_amd64.tar.gz"
-      sha256 "164394dc13c607c2cd77f52c57fac358add68796956e281980a9983b2e8c9c9f"
+      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.2/go-rotate-backups_darwin_amd64.tar.gz"
+      sha256 "95c69ffed045817480f060e7961fd8ccff4be57995f14897ee100fa50dc37d44"
 
       def install
         bin.install "go-rotate-backups"
@@ -28,25 +28,25 @@ class GoRotateBackups < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.1/go-rotate-backups_linux_armv6.tar.gz"
-      sha256 "6a91f7d2d37d85e28008bba289ff2ab552b20aab816dda86e738dcf6d7f772be"
-
-      def install
-        bin.install "go-rotate-backups"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.1/go-rotate-backups_linux_amd64.tar.gz"
-      sha256 "9a2b59b2f80840257b35d7b3205e2038b676d2f851858aaa145c194218836c91"
+      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.2/go-rotate-backups_linux_amd64.tar.gz"
+      sha256 "55f77a8d6401909b294d3765774229d4da316e455901b2fa6fa6d4e2a8184bb7"
 
       def install
         bin.install "go-rotate-backups"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.1/go-rotate-backups_linux_arm64.tar.gz"
-      sha256 "d365da4c7e176ae94cf1365b898f9b49fd3c7a60abb23fe7bb81ad9fb119e199"
+      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.2/go-rotate-backups_linux_arm64.tar.gz"
+      sha256 "f657bf455c21b5f2fdcbe6e1575a0d9ada45c68512d726d605beda78d9104c83"
+
+      def install
+        bin.install "go-rotate-backups"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/stenic/go-rotate-backups/releases/download/1.1.2/go-rotate-backups_linux_armv6.tar.gz"
+      sha256 "aaf3af59946bd7175f297adad27ccfaa28c8694965c172114869aefcc4a0f4cf"
 
       def install
         bin.install "go-rotate-backups"
