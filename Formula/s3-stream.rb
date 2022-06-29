@@ -5,21 +5,21 @@
 class S3Stream < Formula
   desc "Stream logs from s3"
   homepage "https://stenic.io"
-  version "1.0.2"
+  version "1.0.3"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/stenic/s3-stream/releases/download/1.0.2/s3-stream_darwin_amd64.tar.gz"
-      sha256 "dceca466c665e75fccbc51beb2b3c8103ae6a51ac12ac21925411e52391f2d9c"
+    if Hardware::CPU.arm?
+      url "https://github.com/stenic/s3-stream/releases/download/1.0.3/s3-stream_darwin_arm64.tar.gz"
+      sha256 "6ef36a5b5945b5668770f3d2c7d0214ff8fed3180511581c6736a99129769d45"
 
       def install
         bin.install "s3-stream"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/stenic/s3-stream/releases/download/1.0.2/s3-stream_darwin_arm64.tar.gz"
-      sha256 "86e4037a5c299f65b46e6b5d02288b791b2680085439fcb26f80c4febf1075ae"
+    if Hardware::CPU.intel?
+      url "https://github.com/stenic/s3-stream/releases/download/1.0.3/s3-stream_darwin_amd64.tar.gz"
+      sha256 "13a9e491f1edf6041425bd44b24eaa028cd41c08854878e1817717fdfbc00458"
 
       def install
         bin.install "s3-stream"
@@ -28,25 +28,25 @@ class S3Stream < Formula
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/stenic/s3-stream/releases/download/1.0.3/s3-stream_linux_amd64.tar.gz"
+      sha256 "c3e2231d0f6f1a0e30a10436be6b2cffe0d837463947bdbb611be947936be382"
+
+      def install
+        bin.install "s3-stream"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/stenic/s3-stream/releases/download/1.0.2/s3-stream_linux_arm64.tar.gz"
-      sha256 "b8a358f5c03e9fdee25c6f568ea5ad57fef27a3ebc2ed6b79167d50361feb4cb"
+      url "https://github.com/stenic/s3-stream/releases/download/1.0.3/s3-stream_linux_arm64.tar.gz"
+      sha256 "798fc2417849b4142b827fc97ec66ef63ff68fccb799786a36093333bf9da950"
 
       def install
         bin.install "s3-stream"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/stenic/s3-stream/releases/download/1.0.2/s3-stream_linux_armv6.tar.gz"
-      sha256 "5aeacd6d966f2773ea8ddce2b2e1ad24c9dcf48b9da57cc45c8d2430927ec1ad"
-
-      def install
-        bin.install "s3-stream"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/stenic/s3-stream/releases/download/1.0.2/s3-stream_linux_amd64.tar.gz"
-      sha256 "125b317b2d44894642849622ffff5ced5be20bab4a625383d1d789912983db83"
+      url "https://github.com/stenic/s3-stream/releases/download/1.0.3/s3-stream_linux_armv6.tar.gz"
+      sha256 "8f8dd7d92639680e12156d96487acf5f2a4e5a80eb024ee366dabfb2a3af8574"
 
       def install
         bin.install "s3-stream"
