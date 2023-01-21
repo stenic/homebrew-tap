@@ -5,21 +5,21 @@
 class Docmerge < Formula
   desc "Inject output of any command into markdown files"
   homepage "https://stenic.io"
-  version "1.0.3"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/stenic/docmerge/releases/download/1.0.3/docmerge_darwin_amd64.tar.gz"
-      sha256 "7cf72a87f7420169a2044b70831bd08d9093d17a410d46bdfe6c68e574fb92ae"
+      url "https://github.com/stenic/docmerge/releases/download/1.1.0/docmerge_darwin_amd64.tar.gz"
+      sha256 "6b95b1ee86cc29427880623dc1e88a79deb3bf413d3ce5561947439458a21683"
 
       def install
         bin.install "docmerge"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/stenic/docmerge/releases/download/1.0.3/docmerge_darwin_arm64.tar.gz"
-      sha256 "a1c772613af7640e2dbc2c866502d5c89cc6c2e31d377651c68e32d0bd23aa8d"
+      url "https://github.com/stenic/docmerge/releases/download/1.1.0/docmerge_darwin_arm64.tar.gz"
+      sha256 "541ded7d17aae013fcac7f31d4b72a9e8c69ebeb3a2abc360f20f2b05fcfa6c3"
 
       def install
         bin.install "docmerge"
@@ -28,17 +28,17 @@ class Docmerge < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/stenic/docmerge/releases/download/1.0.3/docmerge_linux_amd64.tar.gz"
-      sha256 "35008bc6112ab58399f7661a11bb7d76e7b0832e44579c3f61a29beb40304602"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/stenic/docmerge/releases/download/1.1.0/docmerge_linux_arm64.tar.gz"
+      sha256 "d601a069ee5c3e7e02120c0a1df7c7d171e6108d64cfc5bbc7ddd211a1adce1c"
 
       def install
         bin.install "docmerge"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/stenic/docmerge/releases/download/1.0.3/docmerge_linux_arm64.tar.gz"
-      sha256 "878b471acf7b4da798cc0d19b8cdd5940a36dc81def0aa78cc6620421d7fe6d8"
+    if Hardware::CPU.intel?
+      url "https://github.com/stenic/docmerge/releases/download/1.1.0/docmerge_linux_amd64.tar.gz"
+      sha256 "b3b83a19ed264b1a5b0d063b12581cf62e1de481fdcad7e2ba2d51653632cf40"
 
       def install
         bin.install "docmerge"
