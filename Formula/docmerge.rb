@@ -5,21 +5,21 @@
 class Docmerge < Formula
   desc "Inject output of any command into markdown files"
   homepage "https://stenic.io"
-  version "1.1.0"
+  version "1.2.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/stenic/docmerge/releases/download/1.1.0/docmerge_darwin_amd64.tar.gz"
-      sha256 "6b95b1ee86cc29427880623dc1e88a79deb3bf413d3ce5561947439458a21683"
+    if Hardware::CPU.arm?
+      url "https://github.com/stenic/docmerge/releases/download/1.2.0/docmerge_darwin_arm64.tar.gz"
+      sha256 "07f78ef8e028d443d3deb425f67d57c01ff2dfef9455fae3d13ac47bf7e5a88e"
 
       def install
         bin.install "docmerge"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/stenic/docmerge/releases/download/1.1.0/docmerge_darwin_arm64.tar.gz"
-      sha256 "541ded7d17aae013fcac7f31d4b72a9e8c69ebeb3a2abc360f20f2b05fcfa6c3"
+    if Hardware::CPU.intel?
+      url "https://github.com/stenic/docmerge/releases/download/1.2.0/docmerge_darwin_amd64.tar.gz"
+      sha256 "0324cdcbfeef0a7c0ba268b382483c91150a7eeabe10b53f8d6aeb925d69d194"
 
       def install
         bin.install "docmerge"
@@ -28,17 +28,17 @@ class Docmerge < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/stenic/docmerge/releases/download/1.1.0/docmerge_linux_arm64.tar.gz"
-      sha256 "d601a069ee5c3e7e02120c0a1df7c7d171e6108d64cfc5bbc7ddd211a1adce1c"
+    if Hardware::CPU.intel?
+      url "https://github.com/stenic/docmerge/releases/download/1.2.0/docmerge_linux_amd64.tar.gz"
+      sha256 "410b4b9af8d8527efd8a45fb84a6b5486a51520574ad162d9efe2342a7aa29a7"
 
       def install
         bin.install "docmerge"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/stenic/docmerge/releases/download/1.1.0/docmerge_linux_amd64.tar.gz"
-      sha256 "b3b83a19ed264b1a5b0d063b12581cf62e1de481fdcad7e2ba2d51653632cf40"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/stenic/docmerge/releases/download/1.2.0/docmerge_linux_arm64.tar.gz"
+      sha256 "b67048654cc0ffa1a1faa9d111dfb82afbc23701a6893b257d9b9e17685a535c"
 
       def install
         bin.install "docmerge"
