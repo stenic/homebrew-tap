@@ -5,21 +5,21 @@
 class KubectlResourceReport < Formula
   desc ""
   homepage "https://stenic.io"
-  version "1.0.2"
+  version "1.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.2/kubectl-resource_report_darwin_amd64.tar.gz"
-      sha256 "453f948e391bd6320e314357e1462f23b75915eebf1503496ef4942102262e60"
+      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.3/kubectl-resource_report_darwin_amd64.tar.gz"
+      sha256 "2a8110937ee09fbaa4cdb59927bcc26904208e7e944625da37292b74d4efad97"
 
       def install
         bin.install "kubectl-resource_report"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.2/kubectl-resource_report_darwin_arm64.tar.gz"
-      sha256 "e3d3026fc9ebe33bf52e71f5ce2bac35fbdcdb49ead741c96ee48d7cb1542192"
+      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.3/kubectl-resource_report_darwin_arm64.tar.gz"
+      sha256 "8289407f39acfcb224bc2a7fdc719f9ae8db4c76cf7f07c2295d0a10f9514571"
 
       def install
         bin.install "kubectl-resource_report"
@@ -28,25 +28,25 @@ class KubectlResourceReport < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.2/kubectl-resource_report_linux_armv6.tar.gz"
-      sha256 "be018411ea01e0344fc80745fca0d9164605526322087593d806b89ec9eba190"
-
-      def install
-        bin.install "kubectl-resource_report"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.2/kubectl-resource_report_linux_amd64.tar.gz"
-      sha256 "16cc388a6902dd4d550a85ae9e41f6d52951aed16329b2d4626176852104fb8b"
+      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.3/kubectl-resource_report_linux_amd64.tar.gz"
+      sha256 "06008418c774e4c154d355c95def1c6c213022a7aa026aa338462d8befe65b39"
 
       def install
         bin.install "kubectl-resource_report"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.2/kubectl-resource_report_linux_arm64.tar.gz"
-      sha256 "6eaf3b071004ddbe96788b233a716fe32282eea3502c643c98103724cc9abf95"
+      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.3/kubectl-resource_report_linux_arm64.tar.gz"
+      sha256 "03eb9e572cf8d877bab949a038dd303711998b1c572394a597cabc1028c90dc5"
+
+      def install
+        bin.install "kubectl-resource_report"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/stenic/kubectl-resource_report/releases/download/1.0.3/kubectl-resource_report_linux_armv6.tar.gz"
+      sha256 "6999284573aa624f75f3aa1d46cd19ba0a29b8cc90da679c8723dbc734d8ff8f"
 
       def install
         bin.install "kubectl-resource_report"
